@@ -1,0 +1,10 @@
+
+<div class="container--content" ng-repeat="post in allPosts" ng-if="post.slug === currentPage">
+    <div class="comic-area">
+        <div class="container--comic ">
+            <img ng-src="app/comics/{{post.comic}}.png" alt="{{post.title}}" class="comic--image" />
+        </div>
+        <comic-nav class="comic-nav-container"></comic-nav>
+    </div>
+    <comic-data></comic-data>
+</div>

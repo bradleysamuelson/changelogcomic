@@ -1,0 +1,13 @@
+<div class="backlog-container">
+    <h2>Backlog</h2>
+    <ul class="backlog-list">
+        <li ng-repeat="post in allPosts" class="backlog-line">
+            <a href="#/comic/{{post.slug}}">
+                <img ng-src="app/comics/thumbs/{{post.comic}}-t.png" alt="{{post.title}}" />
+                <div class="backlog-line-info">
+                    <span class="line-title">{{post.title}} </span>
+                    <span class="line-date">{{post.date}}</span></div>
+            </a>
+        </li>
+    </ul>
+</div>

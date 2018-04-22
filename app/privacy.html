@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Change Log - Privacy Policy</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,700,300italic,700italic,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular-messages.js"></script>
+
+
+    
+
+</head>
+<body ng-app="clcomic">
+    <div ng-include="'/img/icons.svg'" style="display:none;"></div>
+    <div class="main" ng-controller="comicCtrl">
+        <header>
+            <a ng-href="/" class="logo"  ng-include="'/img/changelog-logo-h.svg'">
+               <!-- <img src="img/changelog-logo-v.svg" alt="ChangeLog" />-->
+            </a>
+            <ul class="util-nav">
+                <li><a scroll-on-click loc="#contact" href="javascript:void(0);" title="Contact Me">
+                        <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#mail"></use></svg>
+                    </a></li>
+                <!--<li><a href="#" target="_blank" title="Facebook">
+                    <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#facebook"></use></svg>
+                </a></li>-->
+                <li><a href="https://www.youtube.com/channel/UCZGFHTzKTaY_O2Ph8aMUArw" target="_blank" title="YouTube">
+                    <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#youtube"></use></svg>
+                </a></li>
+                <li><a href="http://bradsamuelson.tumblr.com/" target="_blank" title="Tumblr">
+                    <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#tumblr"></use></svg>
+                </a></li>
+                <li><a href="http://www.twitter.com/badsamuelson" target="_blank" title="Twitter">
+                        <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#twitter"></use></svg>
+                    </a></li>
+            </ul>
+        </header>
+        
+        <div class="other-content">
+            <div class="privacy-container">
+                <h2 >Privacy Policy</h1>
+                <p>We do not sell or share any information that is collected from visitors of this site. Information is collected via cookies, which may log data regarding your visit such as your IP address and the name and/or location of your internet provider. The visitor may opt to enter additional information (such as name, and e-mail address) to submit the contact form or other features of the stie. This information is only used in the context of these features and is not retained for any other purposes. Visitors may block cookie usage via their personal browser settings, but it may disable some functionality of the site. </p>
+                <p>When you subscribe or buy something from our store, we receive some personal information. This can include name, email address, and shipping address. As we said, we won’t sell or share this information. Email and shipping addresses will only be used to deliver requested products or services. To help support the site, we have relationships with other companies that we allow to place ads on our pages. As a result of your visit to our site, ad server companies may collect information such as your domain type, your IP address and clickstream information. To learn more or to opt out of targeted advertising <a href="http://www.networkadvertising.org/managing/opt_out.asp" target="_blank">go here</a>. If you have any questions or comments on the above policies, feel free to contact us.</p>
+                <p><a href="/">< Back to comics.</a>
+            </div>
+            <section id="contact">
+                <h3 class="section-header section--contact">Contact</h3>
+                <div class="content-section">
+                    <div class="content-section-container contact-section">
+                        <div class="contact-copy">I love to hear feedback so please feel free to contact me. 
+                            Unless you're a robot or trying to sell me some useless junk. Then please 
+                            don't contact me. Everything else is cool, though.</div>
+                        <div class="contact-form-container" ng-controller="formController">
+                           
+                            <div class="messages" ng-if="message.length > 0">{{ message }}</div>
+                            <form class="contact-form" ng-submit="processForm()" name="contact">
+                                <div class="form-row" ng-class="{ 'has-error' : errorName }"> 
+                                    <label>Name</label>
+                                    <input name="name" placeholder="Please enter your name" class="textfield" ng-model="formData.name" ng-minlength="2" required>
+                                    <span class="help-block" ng-messages="contact.name.$error" ng-show="contact.name.$touched">
+                                        <span ng-message="minlength">Please enter your name - I think it's longer than that</span>
+                                        <span ng-message="required">Please enter your name</span>
+                                    </span>
+                                </div>
+                                <div class="form-row" ng-class="{ 'has-error' : errorEmail }">      
+                                    <label>Email</label>
+                                    <input name="email" type="email" placeholder="Please enter a valid email address" class="textfield" ng-model="formData.email" required>
+                                    <span class="help-block" ng-messages="contact.email.$error" ng-show="contact.email.$touched">
+                                        <span ng-message="email">This needs to be a valid email.</span>
+                                        <span ng-message="required">Please enter your email address.</span>
+                                    </span>
+                                </div>
+                                <div class="form-row">   
+                                    <label>Message</label>
+                                    <textarea name="message" placeholder=" " class="textfield" ng-model="formData.message" required></textarea>
+                                    <span class="help-block" ng-messages="contact.message.$error" ng-show="contact.message.$touched">
+                                        <span ng-message="required">Didn't you want to send me a message?</span>
+                                    </span>
+                                </div>  
+                                <input id="submit" name="submit" type="submit" value="Submit" class="contactsubmit">
+                                    
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <footer>
+        <div ng-include="'views/footer.html'"></div>
+    </footer>
+
+<!-- vendor -->
+<script src="https://oauth.io/lib/oauth.js"></script>
+<script   
+    src="https://code.jquery.com/jquery-3.1.0.min.js"   
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   
+    crossorigin="anonymous">
+</script>
+<script src="js/vendor/sticky.min.js"></script>
+
+<!-- modules -->
+<script src="js/app.js"></script>
+<!-- controllers -->
+<script src="js/controllers/clController.js"></script>
+<script src="js/controllers/pageController.js"></script>
+<script src="js/controllers/tumblrController.js"></script>
+<script src="js/controllers/formController.js"></script>
+<!-- directives -->
+<script src="js/directives/comicData.js"></script>
+<script src="js/directives/comicNav.js"></script>
+<script src="js/directives/scrolling.js"></script>
+
+<!--facebook sharing crap-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- google analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-5036019-6', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>

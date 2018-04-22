@@ -1,0 +1,28 @@
+{
+  "name": "changelog-v0.1",
+  "version": "0.1.0",
+  "description": "ChangeLog comic front-end",
+  "main": "index.js",
+  "dependencies": {
+    "angular-tumblr-api-factory": "^0.5.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.13.0",
+    "less": "^2.7.1",
+    "lite-server": "^2.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "app"
+    },
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.5.6"
+    }
+  },
+  "author": "Brad Samuelson",
+  "license": "ISC"
+}

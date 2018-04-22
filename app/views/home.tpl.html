@@ -1,0 +1,34 @@
+<div class="container--homehead">
+    <div class="home-content" ng-repeat="post in allPosts | limitTo: 1">
+        <h2>The adventures of a canine technology blogger and his software developer roommate.</h2>
+        
+        <div class="latest-container" ng-class="{expand: expanded == true}" >
+            <!--<a href="#" ng-click="expandThumb()" class="latest-link" >
+              <img ng-src="comics/thumbs/{{post.comic}}-t.png" alt="{{post.title}}" />
+                <span>Latest Comic</span>
+            </a>-->
+            <a ng-href="#/comic/{{post.slug}}" class="latest-link" >
+                <img ng-src="app/comics/thumbs/{{post.comic}}-t.png" alt="{{post.title}}" />
+                  <span>Latest Comic</span>
+              </a>
+        </div>
+        <div class="comiclinks-container">
+            <a ng-href="/#/comic/{{allPosts[firstPage].slug}}" class="home-beginning-link">
+                <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#prev"></use></svg> 
+                Start from the beginning
+            </a>
+            <a href="#/backlog" class="home-archive-link">Backlog</a>
+        </div>
+        
+    </div>
+</div>
+<div class="container--content home-comic" ng-class="{expand: expanded == true}" ng-repeat="post in allPosts | limitTo: 1">
+    <div class="comic-area">
+        <div class="container--comic ">
+            <img ng-src="app/comics/{{post.comic}}.png" alt="{{post.title}}" class="comic--image" />
+            
+        </div>
+        <comic-nav class="comic-nav-container"></comic-nav>
+    </div>
+    <comic-data></comic-data>
+</div>

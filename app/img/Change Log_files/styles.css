@@ -1,0 +1,632 @@
+@import "normalize.css";
+.elevate {
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+@keyframes expandLatestBR {
+  from {
+    border-radius: 50%;
+    border-width: 10px;
+  }
+  to {
+    border-radius: 0%;
+    border-width: 0px;
+  }
+}
+@keyframes expandLatestleft {
+  from {
+    top: 60px;
+  }
+  to {
+    top: 40px;
+  }
+}
+@keyframes expandLatestRight {
+  from {
+    right: 120px;
+    width: 200px;
+    height: 200px;
+  }
+  to {
+    right: 0px;
+    width: 100%;
+    height: 400px;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes homecomic {
+  from {
+    max-height: 1px;
+  }
+  to {
+    max-height: 1200px;
+  }
+}
+@keyframes homeComicBottom {
+  from {
+    margin-bottom: 401px;
+  }
+  to {
+    margin-bottom: 0px;
+  }
+}
+body {
+  background: #f8f8f8;
+  font-family: 'Titillium Web', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+}
+h1 p,
+h2 p,
+h3 p,
+h4 p,
+h5 p {
+  margin: 0;
+}
+header {
+  background: rgba(210, 216, 222, 0.95);
+  padding: 0px;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: -2px;
+  height: 42px;
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #e1e5e9;
+}
+.logo {
+  width: 180px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.logo path {
+  fill: #243036;
+}
+.util-nav {
+  list-style: none;
+  float: right;
+  margin: 0px ;
+}
+@media only screen and (max-width: 530px) {
+  .util-nav {
+    display: none;
+  }
+}
+.util-nav li {
+  display: block;
+  float: right;
+  border-left: 1px solid #bbcad1;
+}
+.util-nav li a {
+  color: #435964;
+  text-align: center;
+  display: block;
+  padding: 0 15px;
+  height: 40px;
+  line-height: 40px;
+}
+.util-nav li a:hover {
+  background-color: #cad6dc;
+}
+.util-nav li a .icon-default {
+  width: 22px;
+  height: 22px;
+  margin-top: 10px;
+}
+.container--homehead,
+.container--homehead-blur {
+  height: 401px;
+  background: url(../img/header.png) left top no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.container--content {
+  background: #fff;
+  position: relative;
+}
+.container--content.home-comic {
+  max-height: 1px;
+  overflow: hidden;
+}
+.container--content.home-comic .comic-nav-container {
+  display: none;
+}
+.container--content.home-comic.expand {
+  animation: homecomic 2s ease .2s 1 forwards;
+}
+.container--content.home-comic.expand .comic-nav-container {
+  display: block;
+}
+.container--comic {
+  padding-top: 40px;
+  position: relative;
+  min-height: 340px;
+  max-width: 900px;
+  margin: 0px auto;
+}
+@media only screen and (max-width: 1000px) {
+  .container--comic {
+    padding-right: 50px;
+  }
+}
+.container--comic img {
+  width: 100%;
+  height: auto;
+}
+.home-content {
+  background: rgba(36, 48, 54, 0.9);
+  padding: 60px 20px 20px;
+  width: 400px;
+  height: 400px;
+  float: right;
+  color: #fff;
+}
+.home-content h2 {
+  padding: 15px;
+}
+.latest-container {
+  width: 440px;
+  height: 138px;
+  overflow: hidden;
+  position: absolute;
+  right: 0px;
+  bottom: 40px;
+  background: #fff;
+}
+.latest-container.expand {
+  animation: expandLatestBR .25s ease 1 forwards, 
+    expandLatestleft .5s ease  1 forwards,
+    expandLatestRight .5s ease  1 forwards;
+}
+.latest-container.expand .latest-link {
+  animation: fadeout .25s ease 1 forwards;
+}
+.latest-container.expand .latest-link:after,
+.latest-container.expand .latest-link span {
+  display: none;
+}
+.latest-container.expand + .comiclinks-container {
+  display: none;
+}
+.latest-link {
+  display: block;
+  width: 440px;
+  height: 140px;
+  background: rgba(36, 48, 54, 0.9);
+}
+.latest-link:after {
+  content: '';
+  width: 60px;
+  height: 260px;
+  display: block;
+  position: absolute;
+  left: 210px;
+  top: -50px;
+  background-color: #28353c;
+  -ms-transform: rotate(20deg);
+  /* IE 9 */
+  -webkit-transform: rotate(20deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(20deg);
+}
+.latest-link img {
+  width: 250px;
+  height: auto;
+  position: absolute;
+  top: -50%;
+  opacity: .8;
+}
+.latest-link span {
+  color: #f8f8f8;
+  background: #28353c;
+  position: absolute;
+  display: block;
+  width: 190px;
+  height: 70px;
+  right: 0;
+  text-align: right;
+  padding-top: 100px;
+  padding-right: 10px;
+  font-weight: 700;
+  font-size: 24px;
+}
+.latest-link:hover img {
+  opacity: 1;
+}
+.latest-link:hover span {
+  background: #202b30;
+}
+.latest-link:hover:after {
+  background: #202b30;
+}
+.comiclinks-container {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  background: rgba(26, 34, 39, 0.9);
+  height: 40px;
+  width: 440px;
+  border-top: 3px solid rgba(0, 0, 0, 0.9);
+}
+.comiclinks-container a {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  text-decoration: none;
+  color: #f8f8f8;
+  font-weight: 700;
+  position: absolute;
+  top: 0;
+  width: 440px;
+}
+.comiclinks-container a:hover {
+  background: rgba(16, 21, 23, 0.9);
+}
+.home-beginning-link {
+  text-align: left;
+  left: 0;
+}
+.home-beginning-link .icon-default {
+  margin-bottom: -3px;
+}
+.home-archive-link {
+  right: 0;
+  text-align: right;
+}
+.comic-data {
+  color: #fff;
+  background-color: #1a2227;
+  border-bottom: 10px solid #050708;
+}
+.comic-data .data-container {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+.comic-title {
+  font-size: 15px;
+  color: #f8f8f8;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.comic-date {
+  font-size: 11px;
+  color: #e0e0e0;
+  font-weight: 300;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+.collection {
+  font-size: 11px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.comic-notes {
+  font-size: 11px;
+  color: #eee;
+}
+.credits {
+  font-size: 13px;
+}
+.credit-role {
+  font-size: 11px;
+  color: #e0e0e0;
+  display: block;
+  font-style: italic;
+}
+.other-content {
+  background: #d2d8de;
+}
+.section-header {
+  clear: both;
+  line-height: 40px;
+  font-size: 20px;
+  background-color: #55717f;
+  border-bottom: 3px solid #a8bbc5;
+  padding: 0 20px 0 30px;
+  color: #f9f9f9;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+}
+.section-header:before {
+  content: '';
+  width: 40px;
+  height: 90px;
+  display: block;
+  position: absolute;
+  left: -20px;
+  top: -40px;
+  background-color: #243036;
+  -ms-transform: rotate(20deg);
+  /* IE 9 */
+  -webkit-transform: rotate(20deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(20deg);
+}
+.content-section-container {
+  padding: 20px;
+}
+.comic-nav {
+  background-color: #333;
+  display: inline-block;
+}
+.comic-nav:hover {
+  background-color: #000;
+  cursor: pointer;
+}
+.view-container {
+  min-height: 400px;
+}
+.section--newreaders {
+  min-height: 200px;
+}
+.newreaders-copy {
+  margin-right: 550px;
+}
+.newreaders-images-container {
+  width: 470px;
+  float: right;
+  padding: 0 40px;
+}
+.newreaders-image {
+  width: 200px;
+  border-radius: 50%;
+  margin-left: 20px;
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.newreaders-image img {
+  width: 200px;
+  height: auto;
+}
+.newreaders-image .nametag {
+  background-color: rgba(36, 48, 54, 0.9);
+  position: absolute;
+  top: 160px;
+  width: 100%;
+  padding: 10px 10px 20px 60px;
+  color: #fff;
+  font-weight: bold;
+}
+.tumblr-follow-container {
+  float: right;
+  display: inline-block;
+  margin-right: 20px;
+}
+.blog-container {
+  display: flex;
+  flex-direction: row;
+  clear: both;
+}
+.blog-description {
+  margin: 20px 20px 0;
+}
+.blog-card {
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  flex-grow: 1;
+  width: 260px;
+  height: 300px;
+  overflow: hidden;
+  padding: 15px;
+  background: #f8f8f8;
+  margin: 0 5px;
+  position: relative;
+}
+.blog-card a {
+  color: #55717F;
+  text-decoration: none;
+}
+.blog-card a:hover {
+  color: #000;
+}
+.blog-card .tumblr-link {
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  padding: 10px;
+  text-align: right;
+  display: block;
+  width: 100%;
+  background-color: rgba(26, 34, 39, 0.9);
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+.blog-card .tumblr-link:hover {
+  background-color: rgba(16, 21, 23, 0.9);
+  color: #fff;
+}
+.tumblr-pic {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+.contact-section {
+  display: flex;
+  padding: 0px;
+}
+.contact-form-container {
+  flex-grow: 1;
+  width: 50%;
+  background: #c3cbd3;
+  padding: 20px;
+}
+.contact-copy {
+  flex-grow: 1;
+  width: 50%;
+  padding: 40px;
+}
+.contact-form {
+  font-size: 12px;
+}
+.form-row {
+  margin-bottom: 10px;
+}
+.form-row label {
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 5px;
+}
+.form-row .textfield {
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  padding: 5px;
+  min-width: 300px;
+  outline-color: #243036;
+}
+.form-row textarea {
+  min-height: 80px;
+}
+footer {
+  background: #000000;
+  padding: 20px;
+  color: #f6f6f6;
+  min-height: 200px;
+  position: relative;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #ccc;
+  text-decoration: underline;
+}
+.footer-left {
+  margin-right: 480px;
+}
+.footer-right {
+  width: 440px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.footerlinks {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+}
+.footerlinks li {
+  margin-bottom: 10px;
+}
+.about-image {
+  float: left;
+  margin: 20px 20px 20px 0;
+}
+.about-image img {
+  width: 100px;
+  height: 100px;
+}
+.copyright {
+  font-size: 10px;
+  clear: both;
+}
+.comic-area {
+  position: relative;
+}
+.comic-nav-container {
+  position: absolute;
+  right: 20px;
+  top: 60px;
+  margin-bottom: 20px;
+  width: 40px;
+  border: 1px solid #ccc;
+  -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.icon-default {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+.icon-step {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+.comic-nav button {
+  border: 0px;
+  background: #243036;
+  color: #fff;
+  padding: 8px 0px;
+  text-align: center;
+  width: 40px;
+  cursor: pointer;
+  border-bottom: 1px solid #2e3e45;
+}
+.comic-nav button:hover {
+  background: #101517;
+}
+.comic-nav button:focus {
+  outline: 0;
+}
+.comic-nav button[disabled] {
+  color: #435964;
+  cursor: default;
+}
+.socail-sharing-links {
+  background-color: #1a2227;
+  overflow: hidden;
+}
+.socail-sharing-links a {
+  display: block;
+  width: 40px;
+  padding: 8px 0;
+  text-align: center;
+}
+.socail-sharing-links a:hover {
+  background-color: #050708;
+}
+.socail-sharing-links .icon-default {
+  width: 24px;
+  height: 24px;
+  fill: #6e8e9e;
+}
+.socail-sharing-links .fb-share-button {
+  opacity: 0;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 40px;
+}
+.socail-sharing-links .fb-share-container {
+  position: relative;
+  width: 40px;
+  padding: 8px 0;
+  text-align: center;
+  cursor: pointer;
+}
+.socail-sharing-links .fb-share-container:hover {
+  background-color: #050708;
+}

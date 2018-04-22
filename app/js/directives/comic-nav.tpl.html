@@ -1,0 +1,80 @@
+<div class="comic-controls">
+    <div ng-repeat="item in allPosts" ng-if="item.slug ===currentPage || item.slug === post.slug" class="navigation--comic"> 
+        <!--<a class="comic-nav" ng-href="/#/comic/{{allPosts[0].slug}}">
+            <button ng-disabled="item.slug === allPosts[0].slug">
+                <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#last"></use></svg>
+            </button>
+        </a>-->
+        <!--last button -->
+        <a class="comic-nav" ng-if="item.slug === allPosts[0].slug">
+            <button disabled>
+                <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#last"></use></svg>
+            </button>
+        </a>
+        <a class="comic-nav" ng-if="item.slug != allPosts[0].slug" ng-href="/#/comic/{{allPosts[0].slug}}">
+            <button>
+                <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#last"></use></svg>
+            </button>
+        </a>
+
+        <!--next button -->
+        <a class="comic-nav" ng-if="item.slug === allPosts[0].slug" >
+            <button disabled>
+                <svg class="icon-step" viewBox="0 0 32 32"><use xlink:href="#next"></use></svg>
+            </button>
+        </a>
+        <a class="comic-nav" ng-if="item.slug != allPosts[0].slug" ng-href="/#/comic/{{allPosts[$index -1].slug}}" >
+            <button>
+                <svg class="icon-step" viewBox="0 0 32 32"><use xlink:href="#next"></use></svg>
+            </button>
+        </a>
+
+        <!-- previous button -->
+        <a class="comic-nav" ng-if="item.slug === allPosts[firstPage].slug" >
+            <button disabled>
+                <svg class="icon-step" viewBox="0 0 32 32"><use xlink:href="#prev"></use></svg>
+            </button>
+        </a>
+        <a class="comic-nav" ng-if="item.slug != allPosts[firstPage].slug" ng-href="/#/comic/{{allPosts[$index +1].slug}}" >
+            <button>
+                <svg class="icon-step" viewBox="0 0 32 32"><use xlink:href="#prev"></use></svg>
+            </button>
+        </a>
+
+        <!--first button-->
+        <a class="comic-nav" ng-if="item.slug === allPosts[firstPage].slug" >
+            <button disabled>
+                <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#first"></use></svg>
+            </button>
+        </a>
+        <a class="comic-nav" ng-if="item.slug != allPosts[firstPage].slug" ng-href="/#/comic/{{allPosts[firstPage].slug}}" >
+            <button>
+                <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#first"></use></svg>
+            </button>
+        </a>
+
+    </div>
+    <div class="socail-sharing-links">
+        <div class="sharelabel">
+            Share:
+        </div>
+        <!--twitter-->
+        <a class="twitter-share-button" target="_blank" ng-href="https://twitter.com/intent/tweet?text=I+just+read+this+comic,+you+should+too%3A%20http%3A%2F%2Fwww.changelogcomic.com%2F%23%2Fcomic%2F{{post.slug | urlencode}}">
+            <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#twitter"></use></svg>
+        </a>
+        <!--facebook-->
+        <div class="fb-share-container">
+          <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#facebook"></use></svg>
+          
+         <div class="fb-share-button">
+            <a target="_blank"  href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.changelogcomic.com%2F%23%2Fcomic%2F{{post.slug | urlencode}}">Share</a>
+         </div>
+        </div>
+
+        <!--google+ -->
+        <a href="https://plus.google.com/share?url=http%3A%2F%2Fwww.changelogcomic.com%2F%23%2Fcomic%2F{{post.slug | urlencode}}" onclick="javascript:window.open(this.href,
+    '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+            <svg class="icon-default" viewBox="0 0 16 16"><use xlink:href="#google"></use></svg>
+        </a>
+    </div>
+</div>

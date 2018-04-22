@@ -1,0 +1,116 @@
+body {
+  background: #f8f8f8;
+  font-family: 'Titillium Web', sans-serif;
+}
+a {
+  color: @mid-primary;
+  &:hover {
+    color: @bar-color-full;
+  }
+}
+h1, h2, h3, h4, h5 {
+  margin: 0; 
+  p {
+    margin: 0;
+  }
+}
+.container {
+  &--homehead {
+    width: 100%;
+    height: 401px;
+    background: url(../img/header.png) left top no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow:hidden;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    @media only screen and (max-width: 540px) {
+      background-position: left -40px;
+    }
+  }
+  &--content {
+    //padding-top: 40px;
+    background: #fff;
+    position: relative;
+    &.home-comic {
+      max-height: 1px;
+      overflow: hidden;
+      //margin-bottom:400px;
+      .comic-nav-container {
+        display: none;
+      }
+      &.expand {
+        animation: homecomic 2s ease .2s 1 forwards;
+        .comic-nav-container {
+          display: block;
+        }
+      }
+    }
+  }
+  &--comic {
+    padding-top: 40px;
+    position: relative;
+    min-height: 340px;
+    max-width: 900px;
+    margin: 0px auto;
+    @media only screen and (max-width: 1000px) {
+      padding-right: 50px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+   
+  }
+}
+.sharelabel {
+  font-size: 10px;
+  padding: 5px;
+  color: @mid-primary;
+  text-align: center;
+}
+.other-content {
+  background: @content-bg;
+}
+.section-header {
+  clear: both;
+  line-height: 40px;
+  font-size: 20px;
+  background-color: @mid-primary;
+  border-bottom: 3px solid lighten(@mid-primary, 30%);
+  padding: 0 20px 0 30px;
+  color: #f9f9f9;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+  &:before {
+    content: '';
+    width: 40px;
+    height: 90px;
+    display: block;
+    position: absolute;
+    left: -20px;
+    top: -40px;
+    background-color: @bar-color-full;
+    -ms-transform: rotate(20deg); /* IE 9 */
+    -webkit-transform: rotate(20deg); /* Chrome, Safari, Opera */
+    transform: rotate(20deg);
+  }
+}
+.content-section-container {
+  padding: 20px;
+}
+
+
+.privacy-container {
+  padding: 60px 40px 40px;
+}
+
+//max width for content areas
+.layout-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+

@@ -1,0 +1,89 @@
+
+//contact form stuff
+.contact-section{
+  display: flex;
+  padding: 0px;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+.contact-form-container {
+  flex-grow: 1;
+  width: 50%;
+  background: darken(@content-bg, 5%);
+  padding: 20px;
+  .messages {
+    padding: 10px 0;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  @media only screen and (max-width: 768px) {
+    width: auto;
+  }
+}
+.contact-copy {
+  flex-grow: 1;
+  width: 50%;
+  padding: 40px;
+  @media only screen and (max-width: 768px) {
+    width: auto;
+    padding: 20px;
+  }
+}
+.contact-form {
+  font-size: 12px;
+}
+.help-block {
+  display: block;
+  margin-left: 90px;
+  padding: 2px 0 0;
+  font-style: italic;
+}
+.form-row {
+  margin-bottom: 10px;
+  label {
+    width: 80px;
+    display: inline-block;
+    vertical-align: top;
+    padding-top: 5px;
+  }
+  .textfield {
+    background: #f8f8f8;
+    border: 1px solid @mid-primary;
+    padding: 5px;
+    min-width: 300px;
+    outline-color: @bar-color-full;
+    @media only screen and (max-width: 540px) {
+      min-width: 95%;
+    }
+  }
+  textarea {
+    min-height: 80px;
+  }
+  
+}
+.contactsubmit {
+    background: @bar-color-full;
+    color: #fff;
+    border: 0px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 80px;
+    &:hover {
+      background-color: darken(@bar-color-full, 15%);
+    }
+    @media only screen and (max-width: 540px) {
+      margin: 0;
+      min-width: 100%;
+    }
+  }
+
+.has-error {
+    .help-block {
+      color: red;
+    }
+    .textfield {
+      border-color: red;
+    }
+}

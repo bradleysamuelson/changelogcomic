@@ -1,0 +1,56 @@
+.backlog-container {
+  padding: 60px 30px 20px;
+  h2 {
+    margin-bottom: 20px;
+    color: @mid-primary;
+  }
+}
+
+.backlog-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  border-top: 1px solid @line-color;
+  max-width: 800px;
+}
+.backlog-line {
+  border-bottom: 1px solid @line-color;
+  border-right: 1px solid @line-color;
+  border-left: 1px solid @line-color;
+  img {
+    width: auto;
+    height: 50px;
+  }
+  a {
+    display: block;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    &:hover {
+      background-color: @content-bg;
+    }
+  }
+  .backlog-line-info {
+    display: inline-block;
+    margin-left: 20px;
+    flex-grow: 1;
+    .line-title {
+      @media only screen and (max-width: 540px) {
+        display: block;
+        line-height: 1.35;
+      }
+    }
+    .line-date {
+      color: @mid-primary;
+      font-size: 11px;
+      float: right;
+      margin-right: 30px;
+      @media only screen and (max-width: 540px) {
+        float: none;
+        display: block;
+        line-height: 1.35;
+      }
+    }
+  }
+}
