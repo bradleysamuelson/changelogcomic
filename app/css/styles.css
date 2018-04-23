@@ -704,6 +704,9 @@ header {
 .backlog-container h2 {
   margin-bottom: 20px;
   color: #55717f;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .backlog-list {
   list-style: none;
