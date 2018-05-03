@@ -1,5 +1,16 @@
 [
   {
+    "slug": "found-a-bug",
+    "title": "Found a Bug",
+    "date": "2018-05-03",
+    "Description": "That's a feature, not a bug.",
+    "comic": "cl-0221",
+    "collection": "Volume 1",
+    "season": "2",
+    "episode": "4",
+    "comicnumber": "62",
+    "creator": "Bradley Samuelson"
+  },{
     "slug": "balance",
     "title": "Balance",
     "date": "2018-04-30",
