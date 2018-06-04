@@ -1,5 +1,16 @@
 [
   {
+    "slug": "smart-toaster",
+    "title": "Smart Toaster",
+    "date": "2018-06-04",
+    "Description": "Probably not what you want from your smart toaster.",
+    "comic": "cl-0226",
+    "collection": "Volume 1",
+    "season": "2",
+    "episode": "4",
+    "comicnumber": "67",
+    "creator": "Bradley Samuelson"
+  },{
     "slug": "internet-of-things",
     "title": "Internet of Things",
     "date": "2018-05-28",
