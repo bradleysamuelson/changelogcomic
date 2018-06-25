@@ -1,5 +1,16 @@
 [
   {
+    "slug": "rejected",
+    "title": "Rejected",
+    "date": "2018-06-25",
+    "Description": "Who knows, maybe his code was bad.",
+    "comic": "cl-0229",
+    "collection": "Volume 1",
+    "season": "2",
+    "episode": "4",
+    "comicnumber": "70",
+    "creator": "Bradley Samuelson"
+  },{
     "slug": "time-for-action",
     "title": "Time for Action",
     "date": "2018-06-18",
