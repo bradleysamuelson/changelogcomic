@@ -1,5 +1,16 @@
 [
   {
+    "slug": "usefulness",
+    "title": "Usefulness",
+    "date": "2018-07-16",
+    "Description": "So there are pros and cons.",
+    "comic": "cl-0232",
+    "collection": "Volume 1",
+    "season": "2",
+    "episode": "4",
+    "comicnumber": "73",
+    "creator": "Bradley Samuelson"
+  },{
     "slug": "code-review",
     "title": "Code Review",
     "date": "2018-07-09",
